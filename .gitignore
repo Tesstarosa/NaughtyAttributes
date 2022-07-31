@@ -39,3 +39,6 @@ Thumbs.db
 ====================
 Builds/
 *.bak*
+Packages/
+/Packages/*
+/ProjectSettings/*
