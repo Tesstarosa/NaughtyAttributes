@@ -1,5 +1,5 @@
 {
-  "name": "com.dbrizov.naughtyattributes",
+  "name": "com.naughtyattributes",
   "displayName": "NaughtyAttributes",
   "version": "2.1.4",
   "unity": "2018.4",
@@ -15,7 +15,7 @@
     }
   ],
   "author": {
-    "name": "Denis Rizov",
-    "url": "https://github.com/dbrizov"
+    "name": "Mikhail Bogdanov. Forked from https://github.com/dbrizov Denis Rizov",
+    "url": "https://github.com/Tesstarosa"
   }
 }

@@ -16,15 +16,10 @@ If you want all of the attributes to work in your custom editors, however, you m
 Unity **2019.4** or later versions. Don't forget to include the NaughtyAttributes namespace.
 
 ## Installation
-1. The package is available on the [openupm registry](https://openupm.com). You can install it via [openupm-cli](https://github.com/openupm/openupm-cli).
-```
-openupm add com.dbrizov.naughtyattributes
-```
 2. You can also install via git url by adding this entry in your **manifest.json**
 ```
-"com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm"
+"com.naughtyattributes": "https://github.com/Tesstarosa/NaughtyAttributes.git?path=/Assets/NaughtyAttributes",
 ```
-3. You can also download it from the [Asset Store](https://assetstore.unity.com/packages/tools/utilities/naughtyattributes-129996)
 
 ## Documentation
 - [Documentation](https://dbrizov.github.io/na-docs/)
