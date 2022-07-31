@@ -9,9 +9,7 @@ namespace NaughtyAttributes.Editor
 	{
 		protected override float GetPropertyHeight_Internal(SerializedProperty property, GUIContent label)
 		{
-			var targetEnum = PropertyUtility.GetTargetObjectOfProperty(property) as Enum;
-
-			return targetEnum != null
+			return PropertyUtility.GetTargetObjectOfProperty(property) is Enum targetEnum
 				? GetPropertyHeight(property)
 				: GetPropertyHeight(property) + GetHelpBoxHeight();
 		}
@@ -20,8 +18,7 @@ namespace NaughtyAttributes.Editor
 		{
 			EditorGUI.BeginProperty(rect, label, property);
 
-			var targetEnum = PropertyUtility.GetTargetObjectOfProperty(property) as Enum;
-			if (targetEnum != null)
+			if (PropertyUtility.GetTargetObjectOfProperty(property) is Enum targetEnum)
 			{
 				var enumNew = EditorGUI.EnumFlagsField(rect, label.text, targetEnum);
 				property.intValue = (int) Convert.ChangeType(enumNew, targetEnum.GetType());

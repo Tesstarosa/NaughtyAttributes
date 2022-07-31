@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
@@ -83,13 +84,13 @@ namespace NaughtyAttributes.Editor
 			if (valuesPropertyInfo != null) return valuesPropertyInfo.GetValue(target);
 
 			var methodValuesInfo = ReflectionUtility.GetMethod(target, progressBarAttribute.MaxValueName);
-			if (methodValuesInfo != null &&
-			    (methodValuesInfo.ReturnType == typeof(float) || methodValuesInfo.ReturnType == typeof(int)) &&
-			    methodValuesInfo.GetParameters().Length == 0)
+			if (methodValuesInfo != null && (TypeIsNumber(methodValuesInfo.ReturnType)) && methodValuesInfo.GetParameters().Length == 0)
 				return methodValuesInfo.Invoke(target, null);
 
 			return null;
 		}
+
+
 
 		private static void DrawBar(Rect rect, float fillPercent, string label, Color barColor, Color labelColor)
 		{
@@ -138,6 +139,18 @@ namespace NaughtyAttributes.Editor
 				or long
 				or ulong
 				or float;
+		}
+
+		private static bool TypeIsNumber(Type type)
+		{
+			return type == typeof(sbyte)
+			       || type == typeof(byte)
+			       || type == typeof(short)
+			       || type == typeof(ushort)
+			       || type == typeof(int)
+			       || type == typeof(uint)
+			       || type == typeof(long)
+			       || type == typeof(float);
 		}
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
