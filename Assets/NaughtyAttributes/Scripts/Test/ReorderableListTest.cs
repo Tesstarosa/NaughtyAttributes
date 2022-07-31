@@ -1,34 +1,29 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace NaughtyAttributes.Test
 {
-    public class ReorderableListTest : MonoBehaviour
-    {
-        [ReorderableList]
-        public int[] intArray;
+	public class ReorderableListTest : MonoBehaviour
+	{
+		[ReorderableList] public GameObject[] gameObjectsList;
 
-        [ReorderableList]
-        public List<Vector3> vectorList;
+		[ReorderableList] public int[] intArray;
 
-        [ReorderableList]
-        public List<SomeStruct> structList;
+		[ReorderableList] public List<MonoBehaviour> monoBehavioursList;
 
-        [ReorderableList]
-        public GameObject[] gameObjectsList;
+		[ReorderableList] public List<SomeStruct> structList;
 
-        [ReorderableList]
-        public List<Transform> transformsList;
+		[ReorderableList] public List<Transform> transformsList;
 
-        [ReorderableList]
-        public List<MonoBehaviour> monoBehavioursList;
-    }
+		[ReorderableList] public List<Vector3> vectorList;
+	}
 
-    [System.Serializable]
-    public struct SomeStruct
-    {
-        public int Int;
-        public float Float;
-        public Vector3 Vector;
-    }
+	[Serializable]
+	public struct SomeStruct
+	{
+		public int @int;
+		public float @float;
+		public Vector3 vector;
+	}
 }

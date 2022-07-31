@@ -1,80 +1,75 @@
-﻿using UnityEngine;
-using UnityEditor;
+﻿using System;
 using System.Text.RegularExpressions;
-using System;
+using UnityEditor;
+using UnityEngine;
 
 namespace NaughtyAttributes.Editor
 {
-    [CustomPropertyDrawer(typeof(ResizableTextAreaAttribute))]
-    public class ResizableTextAreaPropertyDrawer : PropertyDrawerBase
-    {
-        protected override float GetPropertyHeight_Internal(SerializedProperty property, GUIContent label)
-        {
-            if (property.propertyType == SerializedPropertyType.String)
-            {
-                float labelHeight = EditorGUIUtility.singleLineHeight;
-                float textAreaHeight = GetTextAreaHeight(property.stringValue);
-                return labelHeight + textAreaHeight;
-            }
-            else
-            {
-                return GetPropertyHeight(property) + GetHelpBoxHeight();
-            }
-        }
+	[CustomPropertyDrawer(typeof(ResizableTextAreaAttribute))]
+	public class ResizableTextAreaPropertyDrawer : PropertyDrawerBase
+	{
+		protected override float GetPropertyHeight_Internal(SerializedProperty property, GUIContent label)
+		{
+			if (property.propertyType == SerializedPropertyType.String)
+			{
+				var labelHeight = EditorGUIUtility.singleLineHeight;
+				var textAreaHeight = GetTextAreaHeight(property.stringValue);
+				return labelHeight + textAreaHeight;
+			}
 
-        protected override void OnGUI_Internal(Rect rect, SerializedProperty property, GUIContent label)
-        {
-            EditorGUI.BeginProperty(rect, label, property);
+			return GetPropertyHeight(property) + GetHelpBoxHeight();
+		}
 
-            if (property.propertyType == SerializedPropertyType.String)
-            {
-                Rect labelRect = new Rect()
-                {
-                    x = rect.x,
-                    y = rect.y,
-                    width = rect.width,
-                    height = EditorGUIUtility.singleLineHeight
-                };
+		protected override void OnGUI_Internal(Rect rect, SerializedProperty property, GUIContent label)
+		{
+			EditorGUI.BeginProperty(rect, label, property);
 
-                EditorGUI.LabelField(labelRect, label.text);
+			if (property.propertyType == SerializedPropertyType.String)
+			{
+				var labelRect = new Rect
+				{
+					x = rect.x,
+					y = rect.y,
+					width = rect.width,
+					height = EditorGUIUtility.singleLineHeight
+				};
 
-                EditorGUI.BeginChangeCheck();
+				EditorGUI.LabelField(labelRect, label.text);
 
-                Rect textAreaRect = new Rect()
-                {
-                    x = labelRect.x,
-                    y = labelRect.y + EditorGUIUtility.singleLineHeight,
-                    width = labelRect.width,
-                    height = GetTextAreaHeight(property.stringValue)
-                };
+				EditorGUI.BeginChangeCheck();
 
-                string textAreaValue = EditorGUI.TextArea(textAreaRect, property.stringValue);
+				var textAreaRect = new Rect
+				{
+					x = labelRect.x,
+					y = labelRect.y + EditorGUIUtility.singleLineHeight,
+					width = labelRect.width,
+					height = GetTextAreaHeight(property.stringValue)
+				};
 
-                if (EditorGUI.EndChangeCheck())
-                {
-                    property.stringValue = textAreaValue;
-                }
-            }
-            else
-            {
-                string message = typeof(ResizableTextAreaAttribute).Name + " can only be used on string fields";
-                DrawDefaultPropertyAndHelpBox(rect, property, message, MessageType.Warning);
-            }
+				var textAreaValue = EditorGUI.TextArea(textAreaRect, property.stringValue);
 
-            EditorGUI.EndProperty();
-        }
+				if (EditorGUI.EndChangeCheck()) property.stringValue = textAreaValue;
+			}
+			else
+			{
+				var message = nameof(ResizableTextAreaAttribute) + " can only be used on string fields";
+				DrawDefaultPropertyAndHelpBox(rect, property, message, MessageType.Warning);
+			}
 
-        private int GetNumberOfLines(string text)
-        {
-            string content = Regex.Replace(text, @"\r\n|\n\r|\r|\n", Environment.NewLine);
-            string[] lines = content.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
-            return lines.Length;
-        }
+			EditorGUI.EndProperty();
+		}
 
-        private float GetTextAreaHeight(string text)
-        {
-            float height = (EditorGUIUtility.singleLineHeight - 3.0f) * GetNumberOfLines(text) + 3.0f;
-            return height;
-        }
-    }
+		private int GetNumberOfLines(string text)
+		{
+			var content = Regex.Replace(text, @"\r\n|\n\r|\r|\n", Environment.NewLine);
+			var lines = content.Split(new[] {Environment.NewLine}, StringSplitOptions.None);
+			return lines.Length;
+		}
+
+		private float GetTextAreaHeight(string text)
+		{
+			var height = (EditorGUIUtility.singleLineHeight - 3.0f) * GetNumberOfLines(text) + 3.0f;
+			return height;
+		}
+	}
 }

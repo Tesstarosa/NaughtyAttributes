@@ -1,8 +1,6 @@
-﻿using UnityEngine;
-
-namespace NaughtyAttributes
+﻿namespace NaughtyAttributes
 {
-    public interface IGroupAttribute
-    {
-    }
+	public interface IGroupAttribute
+	{
+	}
 }

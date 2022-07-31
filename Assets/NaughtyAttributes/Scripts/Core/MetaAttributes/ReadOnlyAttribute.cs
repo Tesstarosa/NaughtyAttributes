@@ -2,9 +2,8 @@
 
 namespace NaughtyAttributes
 {
-    [AttributeUsage(AttributeTargets.Field, AllowMultiple = false, Inherited = true)]
-    public class ReadOnlyAttribute : MetaAttribute
-    {
-
-    }
+	[AttributeUsage(AttributeTargets.Field)]
+	public class ReadOnlyAttribute : MetaAttribute
+	{
+	}
 }

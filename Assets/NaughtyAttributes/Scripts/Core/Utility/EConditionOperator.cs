@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace NaughtyAttributes
+﻿namespace NaughtyAttributes
 {
-    public enum EConditionOperator
-    {
-        And,
-        Or
-    }
+	public enum EConditionOperator
+	{
+		And,
+		Or
+	}
 }

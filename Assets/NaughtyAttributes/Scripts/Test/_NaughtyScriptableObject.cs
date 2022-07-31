@@ -3,10 +3,9 @@ using UnityEngine;
 
 namespace NaughtyAttributes.Test
 {
-    //[CreateAssetMenu(fileName = "NaughtyScriptableObject", menuName = "NaughtyAttributes/_NaughtyScriptableObject")]
-    public class _NaughtyScriptableObject : ScriptableObject
-    {
-        [Expandable]
-        public List<_TestScriptableObjectA> listA;
-    }
+	//[CreateAssetMenu(fileName = "NaughtyScriptableObject", menuName = "NaughtyAttributes/_NaughtyScriptableObject")]
+	public class NaughtyScriptableObject : ScriptableObject
+	{
+		[Expandable] public List<TestScriptableObjectA> listA;
+	}
 }

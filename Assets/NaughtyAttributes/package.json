@@ -1,8 +1,9 @@
 {
   "name": "com.naughtyattributes",
   "displayName": "NaughtyAttributes",
-  "version": "2.1.4",
+  "version": "2.1.5",
   "unity": "2018.4",
+  "license": "MIT",
   "description": "NaughtyAttributes is an extension for the Unity Inspector.",
   "keywords": [ "attribute", "inspector", "editor" ],
   "category": "editor extensions",
@@ -13,9 +14,5 @@
       "description": "Demo Scene",
       "path": "Samples/DemoScene"
     }
-  ],
-  "author": {
-    "name": "Mikhail Bogdanov. Forked from https://github.com/dbrizov Denis Rizov",
-    "url": "https://github.com/Tesstarosa"
-  }
+  ]
 }

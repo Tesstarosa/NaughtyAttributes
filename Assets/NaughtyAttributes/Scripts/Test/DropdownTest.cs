@@ -1,45 +1,43 @@
-using UnityEngine;
+using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace NaughtyAttributes.Test
 {
-    public class DropdownTest : MonoBehaviour
-    {
-        [Dropdown("intValues")]
-        public int intValue;
+	public class DropdownTest : MonoBehaviour
+	{
+		[Dropdown("intValues")] public int intValue;
 
 #pragma warning disable 414
-        private int[] intValues = new int[] { 1, 2, 3 };
+		private int[] intValues = {1, 2, 3};
 #pragma warning restore 414
 
-        public DropdownNest1 nest1;
-    }
+		public DropdownNest1 nest1;
+	}
 
-    [System.Serializable]
-    public class DropdownNest1
-    {
-        [Dropdown("StringValues")]
-        public string stringValue;
+	[Serializable]
+	public class DropdownNest1
+	{
+		public DropdownNest2 nest2;
 
-        private List<string> StringValues { get { return new List<string>() { "A", "B", "C" }; } }
+		[Dropdown("StringValues")] public string stringValue;
 
-        public DropdownNest2 nest2;
-    }
+		private List<string> StringValues => new() {"A", "B", "C"};
+	}
 
-    [System.Serializable]
-    public class DropdownNest2
-    {
-        [Dropdown("GetVectorValues")]
-        public Vector3 vectorValue;
+	[Serializable]
+	public class DropdownNest2
+	{
+		[Dropdown("GetVectorValues")] public Vector3 vectorValue;
 
-        private DropdownList<Vector3> GetVectorValues()
-        {
-            return new DropdownList<Vector3>()
-            {
-                { "Right", Vector3.right },
-                { "Up", Vector3.up },
-                { "Forward", Vector3.forward }
-            };
-        }
-    }
+		private DropdownList<Vector3> GetVectorValues()
+		{
+			return new DropdownList<Vector3>
+			{
+				{"Right", Vector3.right},
+				{"Up", Vector3.up},
+				{"Forward", Vector3.forward}
+			};
+		}
+	}
 }
