@@ -151,17 +151,32 @@ namespace NaughtyAttributes.Editor
 				{
 					var defaultParams = methodInfo.GetParameters().Select(p => p.DefaultValue).ToArray();
 
-					if (!Application.isPlaying)
+					if (Application.isPlaying)
+					{
+						if (methodInfo.Invoke(target, defaultParams) is IEnumerator methodResult &&
+						    target is MonoBehaviour behaviour)
+						{
+							behaviour.StartCoroutine(methodResult);
+						}
+					}
+					else
 					{
 						// Set target object and scene dirty to serialize changes to disk
 						EditorUtility.SetDirty(target);
 
 						var stage = PrefabStageUtility.GetCurrentPrefabStage();
 						EditorSceneManager.MarkSceneDirty(stage != null ? stage.scene : SceneManager.GetActiveScene());
-					}
-					else if (methodInfo.Invoke(target, defaultParams) is IEnumerator methodResult && target is MonoBehaviour behaviour)
-					{
-						behaviour.StartCoroutine(methodResult);
+						if(methodIsCoroutine)
+							return;
+
+						try
+						{
+							methodInfo.Invoke(target, defaultParams);
+						}
+						catch (Exception e)
+						{
+							Debug.LogException(e);
+						}
 					}
 				}
 
