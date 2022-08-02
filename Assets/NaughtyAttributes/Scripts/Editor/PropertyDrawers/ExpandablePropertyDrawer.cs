@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace NaughtyAttributes.Editor
 {
@@ -91,7 +94,11 @@ namespace NaughtyAttributes.Editor
 						EditorGUI.PropertyField(propertyRect, property, label, false);
 
 						// Draw the child properties
-						if (property.isExpanded) DrawChildProperties(rect, property);
+						if (property.isExpanded)
+						{
+							DrawChildProperties(rect, property);
+							DrawButtons(property);
+						}
 					}
 				}
 				else
@@ -103,6 +110,17 @@ namespace NaughtyAttributes.Editor
 
 			property.serializedObject.ApplyModifiedProperties();
 			EditorGUI.EndProperty();
+		}
+
+		private static void DrawButtons(SerializedProperty property)
+		{
+			if (property.objectReferenceValue == null) return;
+			foreach (var methodInfo in ReflectionUtility.GetAllMethods(
+				         property.objectReferenceValue,
+				         m => m.GetCustomAttributes(typeof(ButtonAttribute), true).Length > 0))
+			{
+				NaughtyEditorGui.Button(property.objectReferenceValue, methodInfo);
+			}
 		}
 
 		private void DrawChildProperties(Rect rect, SerializedProperty property)
