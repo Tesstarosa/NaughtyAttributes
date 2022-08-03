@@ -145,6 +145,8 @@ namespace NaughtyAttributes.Editor
 				var methodIsCoroutine = methodInfo.ReturnType == typeof(IEnumerator);
 				if (methodIsCoroutine) buttonEnabled &= Application.isPlaying ? true : false;
 
+				var lastState = GUI.enabled;
+				GUI.enabled = buttonEnabled;
 				EditorGUI.BeginDisabledGroup(!buttonEnabled);
 
 				if (GUILayout.Button(buttonText, ButtonStyle))
@@ -181,6 +183,7 @@ namespace NaughtyAttributes.Editor
 				}
 
 				EditorGUI.EndDisabledGroup();
+				GUI.enabled = lastState;
 			}
 			else
 			{
