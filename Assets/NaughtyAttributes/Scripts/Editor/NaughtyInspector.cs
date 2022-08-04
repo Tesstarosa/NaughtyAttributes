@@ -26,7 +26,7 @@ namespace NaughtyAttributes.Editor
 			_nativeProperties = ReflectionUtility.GetAllProperties(
 				target, p => p.GetCustomAttributes(typeof(ShowNativePropertyAttribute), true).Length > 0);
 
-			_methods = ReflectionUtility.GetAllMethods(
+			_methods = ReflectionUtility.GetAllUniqueMethods(
 				target, m => m.GetCustomAttributes(typeof(ButtonAttribute), true).Length > 0);
 		}
 
@@ -156,6 +156,8 @@ namespace NaughtyAttributes.Editor
 						EditorGUILayout.GetControlRect(false), HorizontalLineAttribute.DefaultHeight,
 						HorizontalLineAttribute.DefaultColor.GetColor());
 				}
+
+				var temp = _methods.ToList();
 
 				foreach (var method in _methods) NaughtyEditorGui.Button(serializedObject.targetObject, method);
 			}

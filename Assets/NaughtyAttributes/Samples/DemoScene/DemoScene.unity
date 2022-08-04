@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -150,6 +150,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 0
@@ -182,6 +183,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 24
@@ -200,33 +202,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enable1: 0
   enable2: 0
-  enum1: 0
-  enum2: 0
   enableIfAll: 
   enableIfAny: 
   enableIfEnum: 
   enableIfEnumFlag: 
   enableIfEnumFlagMulti: 
+  enum1: 0
+  enum2: 0
   nest1:
     enable1: 1
     enable2: 0
-    enum1: 0
-    enum2: 0
     enableIfAll: 1
     enableIfAny: 2
     enableIfEnum: 0
     enableIfEnumFlag: 0
     enableIfEnumFlagMulti: 0
+    enum1: 0
+    enum2: 0
     nest2:
       enable1: 1
       enable2: 1
-      enum1: 0
-      enum2: 0
       enableIfAll: {x: 0.25, y: 0.75}
       enableIfAny: {x: 0.25, y: 0.75}
       enableIfEnum: {x: 0.25, y: 0.75}
       enableIfEnumFlag: {x: 0, y: 0}
       enableIfEnumFlagMulti: {x: 0, y: 0}
+      enum1: 0
+      enum2: 0
 --- !u!114 &114650326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,33 +243,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   disable1: 0
   disable2: 0
-  enum1: 0
-  enum2: 0
   disableIfAll: 
   disableIfAny: 
   disableIfEnum: 
   disableIfEnumFlag: 
   disableIfEnumFlagMulti: 
+  enum1: 0
+  enum2: 0
   nest1:
     disable1: 1
     disable2: 0
-    enum1: 0
-    enum2: 0
     disableIfAll: 1
     disableIfAny: 2
     disableIfEnum: 3
     disableIfEnumFlag: 0
     disableIfEnumFlagMulti: 0
+    enum1: 0
+    enum2: 0
     nest2:
       disable1: 1
       disable2: 1
-      enum1: 0
-      enum2: 0
+      disableIfEnumFlag: {x: 0, y: 0}
+      disableIfEnumFlagMulti: {x: 0, y: 0}
       enableIfAll: {x: 0.25, y: 0.75}
       enableIfAny: {x: 0.25, y: 0.75}
       enableIfEnum: {x: 0.25, y: 0.75}
-      disableIfEnumFlag: {x: 0, y: 0}
-      disableIfEnumFlagMulti: {x: 0, y: 0}
+      enum1: 0
+      enum2: 0
 --- !u!1 &155697335
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +297,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 9
@@ -343,6 +346,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 28
@@ -359,11 +363,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5443d37a05e188846bda9b05b067184e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readOnlyInt: 5
   nest1:
-    readOnlyFloat: 3.14
     nest2:
       readOnlyString: 
+    readOnlyFloat: 3.14
+  readOnlyInt: 5
 --- !u!1 &369789276
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,6 +395,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 31
@@ -407,11 +412,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c8c10b2234650d42b2a8efad6b413db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trans0: {fileID: 0}
   nest1:
-    trans1: {fileID: 0}
     nest2:
       trans2: {fileID: 0}
+    trans1: {fileID: 0}
+  trans0: {fileID: 0}
 --- !u!1 &572382748
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +444,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 23
@@ -455,10 +461,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b437215d92efa74ea85ff726ca0dd09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  int0: 0
-  int1: 0
   float0: 0
   float1: 0
+  int0: 0
+  int1: 0
   slider0: {x: 0.25, y: 0.75}
   slider1: {x: 0.25, y: 0.75}
   str0: 
@@ -492,6 +498,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 11
@@ -540,6 +547,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -582,6 +590,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 21
@@ -613,6 +622,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 4
@@ -631,9 +641,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   intValue: 1
   nest1:
-    stringValue: A
     nest2:
       vectorValue: {x: 1, y: 0, z: 0}
+    stringValue: A
 --- !u!1 &892661554
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +671,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 15
@@ -677,11 +688,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 281a85803caf74a459439020a0840fa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene0: DemoScene
   nest1:
-    scene1: DemoScene
     nest2:
       scene2: 0
+    scene1: DemoScene
+  scene0: DemoScene
 --- !u!1 &933563384
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +720,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 16
@@ -725,15 +737,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 705c14aa9ecaa274289972381f471367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite0: {fileID: 21300000, guid: 005888ede18a58e4db8d069cfa3007cb, type: 3}
-  prefab0: {fileID: 1981131855061102, guid: 7ec354ef3daae7641b7a3fa5e1fe0c81, type: 3}
   nest1:
-    sprite1: {fileID: 21300000, guid: 005888ede18a58e4db8d069cfa3007cb, type: 3}
-    prefab1: {fileID: 1981131855061102, guid: 7ec354ef3daae7641b7a3fa5e1fe0c81, type: 3}
     nest2:
-      sprite2: {fileID: 21300000, guid: 005888ede18a58e4db8d069cfa3007cb, type: 3}
       prefab2: {fileID: 1981131855061102, guid: 7ec354ef3daae7641b7a3fa5e1fe0c81,
         type: 3}
+      sprite2: {fileID: 21300000, guid: 005888ede18a58e4db8d069cfa3007cb, type: 3}
+    prefab1: {fileID: 1981131855061102, guid: 7ec354ef3daae7641b7a3fa5e1fe0c81, type: 3}
+    sprite1: {fileID: 21300000, guid: 005888ede18a58e4db8d069cfa3007cb, type: 3}
+  prefab0: {fileID: 1981131855061102, guid: 7ec354ef3daae7641b7a3fa5e1fe0c81, type: 3}
+  sprite0: {fileID: 21300000, guid: 005888ede18a58e4db8d069cfa3007cb, type: 3}
 --- !u!1 &948946033
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,6 +773,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 12
@@ -777,13 +790,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ca4c27fc649764b9d1625f1740cb9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  elixir: 50
   health: 50
+  maxElixir: 100
   nest1:
     mana: 25
     nest2:
       stamina: 75
-  elixir: 50
-  maxElixir: 100
 --- !u!1 &993534225
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,6 +824,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 10
@@ -827,14 +841,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 460459d6ac76acd4d872f94cf444e6fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerNumber0: 5
   layerName0: UI
+  layerNumber0: 5
   nest1:
-    layerNumber1: 0
     layerName1: Default
+    layerNumber1: 0
     nest2:
       layerNumber2: 4
       layerName2: Water
+--- !u!1 &1027311793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1027311794}
+  - component: {fileID: 1027311795}
+  m_Layer: 0
+  m_Name: GenericTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1027311794
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027311793}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1148579784}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1027311795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027311793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8ca714d438d354cbd2255636d68ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1139446979
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,6 +920,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 7
@@ -909,6 +968,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 106181863}
   - {fileID: 1178133860}
@@ -943,6 +1003,7 @@ Transform:
   - {fileID: 1706612702}
   - {fileID: 369789277}
   - {fileID: 1463483878}
+  - {fileID: 1027311794}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -974,6 +1035,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 1
@@ -1003,7 +1065,7 @@ MonoBehaviour:
       name1: Trigger0
 --- !u!95 &1178133862
 Animator:
-  serializedVersion: 3
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1016,6 +1078,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
@@ -1047,6 +1110,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 18
@@ -1090,6 +1154,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 14
@@ -1106,21 +1171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb4f4bb2e3e063340a24f4bb24528bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text0: '1
-
-    2
-
-    3'
   nest1:
-    text1: '1
-
-      2
-
-      3
-
-      4
-
-      5'
     nest2:
       text2: '1
 
@@ -1135,6 +1186,20 @@ MonoBehaviour:
         6
 
         7'
+    text1: '1
+
+      2
+
+      3
+
+      4
+
+      5'
+  text0: '1
+
+    2
+
+    3'
 --- !u!1 &1293624595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,6 +1227,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 26
@@ -1210,6 +1276,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 20
@@ -1226,11 +1293,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bcc0d5613b48fb43bd36c9d37e99900, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tag0: 
   nest1:
-    tag1: MainCamera
     nest2:
       tag2: Player
+    tag1: MainCamera
+  tag0: 
 --- !u!1 &1444377589
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,6 +1387,7 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1351,6 +1419,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 32
@@ -1367,12 +1436,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94adafcfe59aa344c9b5596b2cc6ecd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  int0: 0
-  nest1:
+  inheritedNest:
     int1: 0
     nest2:
       int2: 0
-  inheritedNest:
+  int0: 0
+  nest1:
     int1: 0
     nest2:
       int2: 0
@@ -1404,6 +1473,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 25
@@ -1420,35 +1490,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fdbfcfbf5b056a4bac491fe21569572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  show1: 0
-  show2: 0
   enum1: 0
   enum2: 0
-  showIfAll: 
-  showIfAny: 
-  showIfEnum: 
-  showIfEnumFlag: 
-  showIfEnumFlagMulti: 
   nest1:
-    show1: 1
-    show2: 0
     enum1: 0
     enum2: 0
-    showIfAll: 0
-    showIfAny: 0
-    showIfEnum: 0
-    showIfEnumFlag: 0
-    showIfEnumFlagMulti: 0
     nest2:
-      show1: 1
-      show2: 1
       enum1: 0
       enum2: 0
+      show1: 1
+      show2: 1
       showIfAll: {x: 0.25, y: 0.75}
       showIfAny: {x: 0.25, y: 0.75}
       showIfEnum: {x: 0.25, y: 0.75}
       showIfEnumFlag: {x: 0, y: 0}
       showIfEnumFlagMulti: {x: 0, y: 0}
+    show1: 1
+    show2: 0
+    showIfAll: 0
+    showIfAny: 0
+    showIfEnum: 0
+    showIfEnumFlag: 0
+    showIfEnumFlagMulti: 0
+  show1: 0
+  show2: 0
+  showIfAll: 
+  showIfAny: 
+  showIfEnum: 
+  showIfEnumFlag: 
+  showIfEnumFlagMulti: 
 --- !u!114 &1524906393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1461,30 +1531,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf166cb519e666419bb79b0c50c5ee1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hide1: 0
-  hide2: 0
   enum1: 0
   enum2: 0
+  hide1: 0
+  hide2: 0
   hideIfAll: 
   hideIfAny: 
   hideIfEnum: 
   hideIfEnumFlag: 
   hideIfEnumFlagMulti: 
   nest1:
-    hide1: 1
-    hide2: 0
     enum1: 0
     enum2: 0
+    hide1: 1
+    hide2: 0
     hideIfAll: 0
     hideIfAny: 0
     hideIfEnum: 0
     hideIfEnumFlag: 0
     hideIfEnumFlagMulti: 0
     nest2:
-      hide1: 1
-      hide2: 1
       enum1: 0
       enum2: 0
+      hide1: 1
+      hide2: 1
       hideIfAll: {x: 0.25, y: 0.75}
       hideIfAny: {x: 0.25, y: 0.75}
       hideIfEnum: {x: 0.25, y: 0.75}
@@ -1517,6 +1587,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 8
@@ -1533,11 +1604,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dcb08e489c17644e9eacaa1ec5fe781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normal: 0
   nest1:
-    warning: 0
     nest2:
       error: 0
+    warning: 0
+  normal: 0
 --- !u!1 &1591883662
 GameObject:
   m_ObjectHideFlags: 0
@@ -1626,6 +1697,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1657,6 +1729,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 19
@@ -1673,11 +1746,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed73e666d447964d93c4840f05423dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  layerNumber0: 0
   layerName0: Default
+  layerNumber0: 0
   nest1:
-    layerNumber1: 0
     layerName1: Default
+    layerNumber1: 0
     nest2:
       layerNumber2: 0
       layerName2: Default
@@ -1708,6 +1781,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 6
@@ -1724,12 +1798,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c4c9aee2b494d44be9bb0b7f12ed7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  precedingField: 5
-  obj0: {fileID: 11400000, guid: 9cf80899b80517945a2d2390fb48877f, type: 2}
+  test: {fileID: 11400000, guid: 6f1f614393f9a7b4bb858ecc5d9ea553, type: 2}
   nest1:
-    obj1: {fileID: 11400000, guid: 9cf80899b80517945a2d2390fb48877f, type: 2}
     nest2:
       obj2: {fileID: 11400000, guid: 9cf80899b80517945a2d2390fb48877f, type: 2}
+    obj1: {fileID: 11400000, guid: 9cf80899b80517945a2d2390fb48877f, type: 2}
+  obj0: {fileID: 11400000, guid: 9cf80899b80517945a2d2390fb48877f, type: 2}
+  precedingField: 5
 --- !u!1 &1641427333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,6 +1831,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 29
@@ -1787,6 +1863,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 30
@@ -1803,38 +1880,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 450a05787c54e6b4fa88ffe223bcee87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min0Int: 0
   max0Int: 0
-  range01Float: 0
-  range01Vector2: {x: 0, y: 0}
-  range01Vector3: {x: 0, y: 0, z: 0}
-  range01Vector4: {x: 0, y: 0, z: 0, w: 0}
-  min0Vector2Int: {x: 0, y: 0}
   max100Vector2Int: {x: 0, y: 0}
-  min0Vector3Int: {x: 0, y: 0, z: 0}
   max100Vector3Int: {x: 0, y: 0, z: 0}
+  min0Int: 0
+  min0Vector2Int: {x: 0, y: 0}
+  min0Vector3Int: {x: 0, y: 0, z: 0}
   nest1:
-    min0Int: 0
     max0Int: 0
-    range01Float: 0
-    range01Vector2: {x: 0, y: 0}
-    range01Vector3: {x: 0, y: 0, z: 0}
-    range01Vector4: {x: 0, y: 0, z: 0, w: 0}
-    min0Vector2Int: {x: 0, y: 0}
     max100Vector2Int: {x: 0, y: 0}
-    min0Vector3Int: {x: 0, y: 0, z: 0}
     max100Vector3Int: {x: 0, y: 0, z: 0}
+    min0Int: 0
+    min0Vector2Int: {x: 0, y: 0}
+    min0Vector3Int: {x: 0, y: 0, z: 0}
     nest2:
-      min0Int: 0
       max0Int: 0
+      max100Vector2Int: {x: 0, y: 0}
+      max100Vector3Int: {x: 0, y: 0, z: 0}
+      min0Int: 0
+      min0Vector2Int: {x: 0, y: 0}
+      min0Vector3Int: {x: 0, y: 0, z: 0}
       range01Float: 0
       range01Vector2: {x: 0, y: 0}
       range01Vector3: {x: 0, y: 0, z: 0}
       range01Vector4: {x: 0, y: 0, z: 0, w: 0}
-      min0Vector2Int: {x: 0, y: 0}
-      max100Vector2Int: {x: 0, y: 0}
-      min0Vector3Int: {x: 0, y: 0, z: 0}
-      max100Vector3Int: {x: 0, y: 0, z: 0}
+    range01Float: 0
+    range01Vector2: {x: 0, y: 0}
+    range01Vector3: {x: 0, y: 0, z: 0}
+    range01Vector4: {x: 0, y: 0, z: 0, w: 0}
+  range01Float: 0
+  range01Vector2: {x: 0, y: 0}
+  range01Vector3: {x: 0, y: 0, z: 0}
+  range01Vector4: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1747151587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,6 +1939,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 13
@@ -1878,24 +1956,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93fde7cd79390148ac576c3a159a77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameObjectsList: []
   intArray: 020000000300000001000000
+  monoBehavioursList: []
+  structList:
+  - int: 0
+    float: 0
+    vector: {x: 0, y: 0, z: 0}
+  - int: 0
+    float: 0
+    vector: {x: 0, y: 0, z: 0}
+  - int: 0
+    float: 0
+    vector: {x: 0, y: 0, z: 0}
+  transformsList: []
   vectorList:
   - {x: 2, y: 2, z: 2}
   - {x: 3, y: 3, z: 3}
   - {x: 1, y: 1, z: 1}
-  structList:
-  - Int: 2
-    Float: 2
-    Vector: {x: 2, y: 2, z: 2}
-  - Int: 3
-    Float: 3
-    Vector: {x: 3, y: 3, z: 3}
-  - Int: 1
-    Float: 1
-    Vector: {x: 1, y: 1, z: 1}
-  gameObjectsList: []
-  transformsList: []
-  monoBehavioursList: []
 --- !u!1 &1784643784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,6 +2001,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 22
@@ -1939,10 +2018,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3920f5ea384951b4990e4d9e8032d12e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  int0: 0
-  int1: 0
   float0: 0
   float1: 0
+  int0: 0
+  int1: 0
   slider0: {x: 0.25, y: 0.75}
   slider1: {x: 0.25, y: 0.75}
   str0: 
@@ -1976,6 +2055,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 27
@@ -2024,6 +2104,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 17
@@ -2067,6 +2148,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 5
@@ -2115,6 +2197,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 2
@@ -2159,6 +2242,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1148579784}
   m_RootOrder: 3
@@ -2175,6 +2259,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6587b100d001e7e46b9aaae7f1180b40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -1
+      value: -1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curve1:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  curve2:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 10
+      value: 10
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   curves:
   - serializedVersion: 2
     m_Curve:
@@ -2291,78 +2447,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-  curve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: -1
-      value: -1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  curve1:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  curve2:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 10
-      value: 10
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
   nest1:
     curve:
       serializedVersion: 2

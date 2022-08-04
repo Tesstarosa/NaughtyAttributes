@@ -115,7 +115,7 @@ namespace NaughtyAttributes.Editor
 		private static void DrawButtons(SerializedProperty property)
 		{
 			if (property.objectReferenceValue == null) return;
-			foreach (var methodInfo in ReflectionUtility.GetAllMethods(
+			foreach (var methodInfo in ReflectionUtility.GetAllUniqueMethods(
 				         property.objectReferenceValue,
 				         m => m.GetCustomAttributes(typeof(ButtonAttribute), true).Length > 0))
 			{

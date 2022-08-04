@@ -8,6 +8,11 @@ namespace NaughtyAttributes.Editor
 {
 	public static class ReflectionUtility
 	{
+		public static bool IsOverride(this MethodInfo m)
+		{
+			return m.GetBaseDefinition().DeclaringType != m.DeclaringType;
+		}
+
 		public static IEnumerable<FieldInfo> GetAllFields(object target, Func<FieldInfo, bool> predicate)
 		{
 			if (target == null)
@@ -50,7 +55,41 @@ namespace NaughtyAttributes.Editor
 			}
 		}
 
-		public static IEnumerable<MethodInfo> GetAllMethods(object target, Func<MethodInfo, bool> predicate)
+		private static bool HasOverride(MethodInfo target, IEnumerable<MethodInfo> methods)
+		{
+			foreach (var method in methods)
+			{
+				if (method == target) continue;
+				if (target.Name != method.Name) continue;
+
+				var currentBaseDef = target.GetBaseDefinition();
+				var findedBaseDef = method.GetBaseDefinition();
+
+				if (currentBaseDef == null) continue;
+
+				if (findedBaseDef == null) continue;
+
+				if (currentBaseDef != findedBaseDef) continue;
+
+				if (currentBaseDef.DeclaringType != findedBaseDef.DeclaringType) continue;
+
+				if (target.IsOverride() || method.IsOverride())
+				{
+					if(target.DeclaringType.IsSubclassOf(method.DeclaringType))
+					{
+						continue;
+					}
+					else
+					{
+						return true;
+					}
+				}
+			}
+
+			return false;
+		}
+
+		public static IEnumerable<MethodInfo> GetAllUniqueMethods(object target, Func<MethodInfo, bool> predicate)
 		{
 			if (target == null)
 			{
@@ -60,14 +99,19 @@ namespace NaughtyAttributes.Editor
 
 			var types = GetSelfAndBaseTypes(target);
 
-			for (var i = types.Count - 1; i >= 0; i--)
-			{
-				var methodInfos = types[i]
-					.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic |
-					            BindingFlags.Public | BindingFlags.DeclaredOnly)
-					.Where(predicate);
+			var methods = (from type in types
+				from method in type.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic |
+				                               BindingFlags.Public | BindingFlags.DeclaredOnly)
+				select method).Where(predicate).ToList();
 
-				foreach (var methodInfo in methodInfos) yield return methodInfo;
+			foreach (var method in methods)
+			{
+				if (HasOverride(method, methods))
+				{
+					continue;
+				}
+
+				yield return method;
 			}
 		}
 
@@ -84,7 +128,7 @@ namespace NaughtyAttributes.Editor
 
 		public static MethodInfo GetMethod(object target, string methodName)
 		{
-			return GetAllMethods(target, m => m.Name.Equals(methodName, StringComparison.Ordinal)).FirstOrDefault();
+			return GetAllUniqueMethods(target, m => m.Name.Equals(methodName, StringComparison.Ordinal)).FirstOrDefault();
 		}
 
 		public static Type GetListElementType(Type listType)
